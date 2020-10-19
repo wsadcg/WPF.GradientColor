@@ -67,6 +67,10 @@ namespace GradientColor
         }
         private void inputHex_TextChanged(object sender, TextChangedEventArgs e)
         {
+            if (Regex.IsMatch(inputHex.Text, "[^a-fA-F0-9]"))
+            {
+                return;
+            }
             if (inputHex.Text.Length == 6)
             {
                 string[] arrHEX = new string[3];
